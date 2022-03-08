@@ -2,6 +2,7 @@ const express = require("express");
 const leaderRouter = express.Router();
 
 
+
 leaderRouter.get("/", (req, res) => {
   res.send(`Will send all leaders to You`);
 });
