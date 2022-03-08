@@ -4,7 +4,7 @@ const leaderRouter = express.Router();
 
 
 leaderRouter.get("/", (req, res) => {
-  res.send(`Will send all leaders to You`);
+  res.send(`Will send all the leaders to You...`);
 });
 
 leaderRouter.get("/:leaderId", (req, res) => {
@@ -29,7 +29,7 @@ leaderRouter.put("/", (req, res) => {
 });
 
 leaderRouter.delete("/", (req, res) => {
-  res.send(`Will delete all the leaders`);
+  res.send(`Will delete all the leaders!!!!`);
 });
 
 leaderRouter.delete("/:leaderId", (req, res) => {
