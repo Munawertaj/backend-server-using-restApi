@@ -1,50 +1,40 @@
 const express = require("express");
-
-//Initializing express Router Object
 const promoRouter = express.Router();
 
-//Get Router
+
+
 promoRouter.get("/", (req, res) => {
-  res.send(`Will Send All the promotions`);
+  res.send(`Will send all the promotions to You...`);
 });
 
 promoRouter.get("/:promoId", (req, res) => {
-  res.send(`will send promotion of id : ${req.params.promoId}`);
+  res.send(`Will send the promotion of id : ${req.params.promoId}`);
 });
 
-//post Router
 promoRouter.post("/", (req, res) => {
-  res.send(
-    `This will add promotion: ${req.body.name} with details : ${req.body.description}`
-  );
+  res.send(`Will add the promotion: ${req.body.name} with details : ${req.body.description}`);
 });
 
 promoRouter.post("/:promoId", (req, res) => {
-  res
-    .status(403)
-    .send(`Post request not supported on /promotions/${req.params.promoId}`);
+  res.status(403).send(`Post operation is not supported on /promotions/${req.params.promoId}`);
 });
 
-//put Router
 promoRouter.put("/:promoId", (req, res) => {
   res.write(`Updating the promotion: ${req.params.promoId} \n`);
-  res.end(
-    `will Update the promotion: ${req.body.name} with details: ${req.body.description}`
-  );
+  res.end(`Will update the promotion: ${req.body.name} with details: ${req.body.description}`);
 });
 
 promoRouter.put("/", (req, res) => {
-  res.status(403).send(`put request not supported on /promotions`);
+  res.status(403).send(`Put operation is not supported on /promotions`);
 });
 
-//Delete Router
 promoRouter.delete("/", (req, res) => {
-  res.send(`will delete all promotions`);
+  res.send(`Will delete all the promotions!!!!`);
 });
 
 promoRouter.delete("/:promoId", (req, res) => {
-  res.send(`will delete the promotion of Id: ${req.params.promoId}`);
+  res.send(`Will delete the promotion of Id: ${req.params.promoId}`);
 });
 
-//Export Promo Router
+
 module.exports = promoRouter;
